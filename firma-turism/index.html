@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hoinar · Firma de turism</title>
+  <meta name="description" content="Proiect Sincretic II A (BD + PBD) - Tema 10: baza de date pentru o firmă de turism">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230f766e'/><path d='M8 20l16-8-6 12-2-5z' fill='white'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <!-- Ecran de încărcare (baza de date se creează în browser la prima deschidere) -->
+  <div id="loader" class="loader">
+    <div class="loader-card">
+      <div class="brand-mark big">
+        <svg viewBox="0 0 24 24"><path d="M3 13.5l18-9-6.75 15.75-2.25-6.75z"/></svg>
+      </div>
+      <h1>Hoinar</h1>
+      <p class="muted">Se pregătește baza de date PostgreSQL…</p>
+      <div class="loader-bar"><span id="loader-progress"></span></div>
+      <p id="loader-step" class="loader-step">Pornire PostgreSQL (PGlite)</p>
+    </div>
+  </div>
+
+  <div class="app" id="app" hidden>
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark">
+          <svg viewBox="0 0 24 24"><path d="M3 13.5l18-9-6.75 15.75-2.25-6.75z"/></svg>
+        </div>
+        <div>
+          <div class="brand-name">Hoinar</div>
+          <div class="brand-sub">Agenție de turism</div>
+        </div>
+      </div>
+      <nav class="nav" id="nav"></nav>
+      <div class="sidebar-foot">
+        <button class="btn btn-ghost-light" id="btn-reset" title="Șterge modificările și reîncarcă datele de test">
+          <span data-icon="refresh"></span> Resetează datele
+        </button>
+        <p class="foot-note">PostgreSQL în browser (PGlite)<br>Proiect Sincretic II A · Tema 10</p>
+      </div>
+    </aside>
+
+    <div class="main-wrap">
+      <header class="topbar">
+        <button class="icon-btn menu-btn" id="menu-btn" aria-label="Meniu"><span data-icon="menu"></span></button>
+        <div>
+          <h2 id="page-title">Panou</h2>
+          <p id="page-sub" class="muted"></p>
+        </div>
+        <div class="topbar-actions" id="page-actions"></div>
+      </header>
+      <main id="view" class="view"></main>
+    </div>
+  </div>
+
+  <div id="modal-root"></div>
+  <div id="toast-root" class="toast-root"></div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
